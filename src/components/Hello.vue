@@ -1,17 +1,16 @@
 <template>
   <div class="hello">
-    {{ $store.state.count }}
+    Counter : {{ $store.state.count }}, counter is {{ evenOrOdd }}
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  computed: mapGetters([
+    'evenOrOdd'
+  ])
 }
 </script>
 
